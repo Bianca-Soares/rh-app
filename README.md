@@ -1,6 +1,6 @@
 # rh-app
 
-## Project setup
+## Project setup vue 3
 ```
 npm install
 ```
@@ -17,3 +17,9 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Pinia - gerenciamento de estado das propriedades reativas
+See [Configuration Reference](https://pinia.vuejs.org/introduction.html).
+
+### Router - controle de navegação
+See [Configuration Reference](https://v3.router.vuejs.org).
