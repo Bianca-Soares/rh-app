@@ -16,11 +16,26 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 export default {
   components: {},
   setup() {
-    const listaFavoritos = ref([]);
+    const listaFavoritos = ref([])
+
+    onMounted(() => {
+      listaFavoritos.value = []
+    })
+
+    function removeFavorito(idUsuario) {
+      listaFavoritos.value = listaFavoritos.value.filter(
+        (item) => item.id !== idUsuario
+      )
+    }
+
+    return {
+      listaFavoritos,
+      removeFavorito
+    }
   },
 }
 </script>
