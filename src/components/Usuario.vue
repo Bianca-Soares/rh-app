@@ -1,9 +1,16 @@
 <template>
   <div class="card">
-    <div class="imagem-container">
-      <img :src="usuario.avatar" alt="imagem avatar" @click="redirectFuncionario(usuario.id)"/>
+    <div class="button"
+      @click="redirectFuncionario(usuario.id)"
+      @mouseover="isHover = true"
+      @mouseleave="isHover = false"
+      :class="{ 'hovered': isHover }"
+    >
+      <div class="imagem-container">
+        <img :src="usuario.avatar" alt="imagem avatar" />
+      </div>
+      <span> {{ usuario.first_name + " " + usuario.last_name }} </span>
     </div>
-    <span> {{ usuario.first_name + " " + usuario.last_name }} </span>
     <a class="favorito" @click="mudarFavorito(usuario.id)">
       <img v-if="isFavorito" src="@/assets/star-svgrepo.svg" alt="favorito icone" />
       <img v-else src="@/assets/star-outline.svg" alt="favorito icone" />
@@ -23,6 +30,8 @@ export default {
 
     const router = useRouter()
 
+    const isHover = ref(false)
+
     const redirectFuncionario = (id) => {
       router.push({ name: 'Funcionario', params: { id } })
     }
@@ -38,7 +47,7 @@ export default {
       emit("removeSelecionado", idUsuario)
     }
 
-    return { redirectFuncionario, mudarFavorito, favorito }
+    return { redirectFuncionario, mudarFavorito, favorito, isHover }
   }
 }
 </script>
@@ -46,7 +55,7 @@ export default {
 <style>
 .card {
   padding: 10px;
-  background: #ffedec;
+  background: #ec8883;
   border-radius: 5px;
   position: relative;
 }
@@ -78,5 +87,15 @@ export default {
 .favorito img {
   width: 30px;
   margin: 0 auto;
+}
+
+.button {
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button.hovered {
+  color: #ffedec8d;
 }
 </style>
