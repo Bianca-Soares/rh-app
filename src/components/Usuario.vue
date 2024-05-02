@@ -3,8 +3,8 @@
     <div class="imagem-container">
       <img :src="usuario.avatar" alt="imagem avatar" />
     </div>
-    <span> Nome </span>
-    <a class="favorito" >
+    <span> {{ usuario.first_name + " " + usuario.last_name }} </span>
+    <a class="favorito" @click="mudarFavorito(usuario.id)">
       <img v-if="isFavorito" src="@/assets/star-svgrepo.svg" alt="favorito icone" />
       <img v-else src="@/assets/star-outline.svg" alt="favorito icone" />
     </a>
@@ -12,8 +12,26 @@
 </template>
 
 <script>
+import { ref } from "vue"
 export default {
-  props: ["usuario", "isFavorito"]
+  props: ["usuario", "isFavorito"],
+  emits: ["selecionado", "removeSelecionado"],
+  setup(prop, { emit }) {
+    const favorito = ref(false)
+
+    function mudarFavorito(idUsuario) {
+      favorito.value = !favorito.value
+
+      if (favorito.value) {
+        emit("selecionado", idUsuario)
+        return
+      }
+
+      emit("removeSelecionado", idUsuario)
+    }
+
+    return { mudarFavorito, favorito }
+  }
 }
 </script>
 

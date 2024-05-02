@@ -7,7 +7,7 @@
           <img :src="item.avatar" alt="imagem avatar" />
         </div>
         <span>{{ item.first_name + " " + item.last_name }}</span>
-        <a class="favorito" @click="removeFavorito(item.id)">
+        <a class="favorito" @click="removerFavorito(item.id)">
           <span>X</span>
         </a>
       </div>
@@ -28,15 +28,9 @@ export default {
     onMounted(() => {
     })
 
-    function removeFavorito(idUsuario) {
-      listaFavoritos.value = listaFavoritos.value.filter(
-        (item) => item.id !== idUsuario
-      )
-    }
-
     return {
       listaFavoritos,
-      removeFavorito
+      removerFavorito: usuario.removerUsuario
     }
   },
 }

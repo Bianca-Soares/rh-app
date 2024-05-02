@@ -4,6 +4,8 @@
     <div class="lista">
       <div v-for="item in listaPessoas" :key="item.id">
         <Usuario
+          @selecionado="adicionarFavorito($event)"
+          @removeSelecionado="removerFavorito($event)"
           :usuario="item"
           :isFavorito="isFavorito(item.id)"/>
       </div>
@@ -26,7 +28,9 @@ export default {
 
     return {
       listaPessoas,
-      isFavorito: usuario.isFavorito
+      isFavorito: usuario.isFavorito,
+      adicionarFavorito: usuario.adicionarUsuario,
+      removerFavorito: usuario.removerUsuario
     }
   }
 }
