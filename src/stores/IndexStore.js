@@ -47,12 +47,11 @@ export const useStore = defineStore('Usuario', {
     },
     // actions
     actions: {
-        inclement (){
-            this.count ++
-        }
     },
     // getters
     getters: {
-    }
-
+      totalFavoritos: (state) => state.listaFavoritos.length,
+      isFavorito: (state) => (id) =>
+        state.listaFavoritos.some(item => item.id === id),
+  }
 })
