@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="imagem-container">
-      <img :src="usuario.avatar" alt="imagem avatar" />
+      <img :src="usuario.avatar" alt="imagem avatar" @click="redirectFuncionario(usuario.id)"/>
     </div>
     <span> {{ usuario.first_name + " " + usuario.last_name }} </span>
     <a class="favorito" @click="mudarFavorito(usuario.id)">
@@ -13,11 +13,19 @@
 
 <script>
 import { ref } from "vue"
+import { useRouter } from 'vue-router'
+
 export default {
   props: ["usuario", "isFavorito"],
   emits: ["selecionado", "removeSelecionado"],
   setup(prop, { emit }) {
     const favorito = ref(false)
+
+    const router = useRouter()
+
+    const redirectFuncionario = (id) => {
+      router.push({ name: 'Funcionario', params: { id } })
+    }
 
     function mudarFavorito(idUsuario) {
       favorito.value = !favorito.value
@@ -30,7 +38,7 @@ export default {
       emit("removeSelecionado", idUsuario)
     }
 
-    return { mudarFavorito, favorito }
+    return { redirectFuncionario, mudarFavorito, favorito }
   }
 }
 </script>

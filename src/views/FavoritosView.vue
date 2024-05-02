@@ -4,7 +4,7 @@
     <div v-for="item in listaFavoritos" :key="item.id">
       <div class="card">
         <div class="imagem-container">
-          <img :src="item.avatar" alt="imagem avatar" />
+          <img :src="item.avatar" alt="imagem avatar" @click="redirectFuncionario(item.id)"/>
         </div>
         <span>{{ item.first_name + " " + item.last_name }}</span>
         <a class="favorito" @click="removerFavorito(item.id)">
@@ -18,6 +18,7 @@
 <script>
 import { onMounted, computed } from "vue";
 import { useStore } from "@/stores/IndexStore.js"
+import { useRouter } from 'vue-router'
 
 export default {
   components: {},
@@ -25,10 +26,17 @@ export default {
     const usuario = useStore()
     const listaFavoritos = computed(() => usuario.$state.listaFavoritos)
 
+    const router = useRouter()
+
+    const redirectFuncionario = (id) => {
+      router.push({ name: 'Funcionario', params: { id } })
+    }
+
     onMounted(() => {
     })
 
     return {
+      redirectFuncionario,
       listaFavoritos,
       removerFavorito: usuario.removerUsuario
     }
