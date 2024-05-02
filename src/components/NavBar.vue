@@ -6,15 +6,26 @@
     </ul>
     <div class="favorito">
       <img src="@/assets/star-svgrepo.svg" alt="favoritos" />
-      <span v-if="true">1</span>
+      <span v-if="true">{{ totalFavoritos }}</span>
     </div>
   </nav>
 </template>
 
 <script>
+
+import { computed } from "vue"
+import { useStore } from "@/stores/IndexStore.js"
+
 export default {
-  setup() {},
-};
+  setup() {
+    const usuario = useStore()
+    const totalFavoritos = computed(() => usuario.totalFavoritos)
+
+    return {
+      totalFavoritos
+    }
+  }
+}
 </script>
 
 <style scoped>
