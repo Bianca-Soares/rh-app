@@ -5,7 +5,7 @@
     </div>
     <span> Nome </span>
     <a class="favorito" >
-      <img v-if="favorito" src="@/assets/star-svgrepo.svg" alt="favorito icone" />
+      <img v-if="isFavorito" src="@/assets/star-svgrepo.svg" alt="favorito icone" />
       <img v-else src="@/assets/star-outline.svg" alt="favorito icone" />
     </a>
   </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ["usuario"]
+  props: ["usuario", "isFavorito"]
 }
 </script>
 

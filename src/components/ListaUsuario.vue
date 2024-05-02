@@ -3,7 +3,9 @@
   <div>
     <div class="lista">
       <div v-for="item in listaPessoas" :key="item.id">
-        <Usuario :usuario="item"/>
+        <Usuario
+          :usuario="item"
+          :isFavorito="isFavorito(item.id)"/>
       </div>
     </div>
   </div>
@@ -23,7 +25,8 @@ export default {
     const listaPessoas = computed(() => usuario.$state.listaPessoas)
 
     return {
-      listaPessoas
+      listaPessoas,
+      isFavorito: usuario.isFavorito
     }
   }
 }
