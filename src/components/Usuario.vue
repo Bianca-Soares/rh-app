@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="imagem-container">
-      <img src="@/assets/logo.png" alt="imagem avatar" />
+      <img :src="usuario.avatar" alt="imagem avatar" />
     </div>
     <span> Nome </span>
     <a class="favorito" >

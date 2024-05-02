@@ -16,14 +16,16 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { onMounted, computed } from "vue";
+import { useStore } from "@/stores/IndexStore.js"
+
 export default {
   components: {},
   setup() {
-    const listaFavoritos = ref([])
+    const usuario = useStore()
+    const listaFavoritos = computed(() => usuario.$state.listaFavoritos)
 
     onMounted(() => {
-      listaFavoritos.value = []
     })
 
     function removeFavorito(idUsuario) {
