@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card {
   padding: 10px;
   background: #ec8883;
