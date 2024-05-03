@@ -14,7 +14,7 @@
 <script>
 
 import { computed } from "vue"
-import { useStore } from "@/stores/IndexStore.js"
+import { useStore } from "@/stores/pessoa"
 
 export default {
   setup() {

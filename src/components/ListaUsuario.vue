@@ -15,7 +15,7 @@
 
 <script>
 import Usuario from "@/components/Usuario.vue"
-import { useStore } from "@/stores/IndexStore.js"
+import { useStore } from "@/stores/pessoa"
 import { computed } from "vue"
 
 export default {

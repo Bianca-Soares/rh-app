@@ -26,7 +26,7 @@
 <script>
 import { ref } from "vue"
 import { onMounted, computed } from "vue";
-import { useStore } from "@/stores/IndexStore.js"
+import { useStore } from "@/stores/pessoa"
 import { useRouter } from 'vue-router'
 
 export default {

@@ -57,7 +57,7 @@
 
 <script>
 import { ref } from "vue"
-import { useStore } from "@/stores/FuncionarioStore.js"
+import { useStore } from "@/stores/funcionario"
 
 export default {
   props: ["funcionario"],

@@ -15,7 +15,7 @@
 
 <script>
 import { computed } from "vue"
-import { useStore } from "@/stores/IndexStore.js"
+import { useStore } from "@/stores/pessoa"
 import { useRoute } from 'vue-router'
 import Justificativa from "@/components/Justificativa.vue"
 import Ferias from "@/components/Ferias.vue"
