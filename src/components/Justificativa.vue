@@ -57,12 +57,12 @@
 
 <script>
 import { ref } from "vue"
-import { useStore } from "@/stores/funcionario"
+import { useFuncionarioStore } from "@/stores/funcionario"
 
 export default {
   props: ["funcionario"],
   setup(prop) {
-    const funcionarioStore = useStore()
+    const funcionarioStore = useFuncionarioStore()
     const isAprovada = ref(false)
     const editMode = ref(false)
     const idSelecionado = ref(0)

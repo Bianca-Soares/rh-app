@@ -3,7 +3,7 @@ import state from './state'
 import actions from './actions'
 import getters from './getters'
 
-export const useStore = defineStore('Funcionario', {
+export const useFuncionarioStore = defineStore('Funcionario', {
   state,
   actions,
   getters
