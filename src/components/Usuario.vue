@@ -12,8 +12,7 @@
       <span> {{ usuario.first_name + " " + usuario.last_name }} </span>
     </div>
     <a class="favorito" @click="mudarFavorito(usuario.id)">
-      <img v-if="isFavorito" src="@/assets/star-svgrepo.svg" alt="favorito icone" />
-      <img v-else src="@/assets/star-outline.svg" alt="favorito icone" />
+      <img src="@/assets/alert-circle.svg" alt="favorito icone" />
     </a>
   </div>
 </template>

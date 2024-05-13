@@ -3,7 +3,7 @@ const state = () => {
         justificativasDeFaltasGeral: [
             {
                 id: 1,
-                id_funcionario: 2,
+                id_funcionario: 1,
                 descricao: 'Falta por motivo de doença',
                 datas: ['2024-04-01', '2024-04-02'],
                 isAprovada: false,
@@ -11,7 +11,7 @@ const state = () => {
             },
             {
                 id: 2,
-                id_funcionario: 2,
+                id_funcionario: 1,
                 descricao: 'Falta por motivo de consulta médica',
                 datas: ['2024-04-05'],
                 isAprovada: false,
@@ -29,28 +29,30 @@ const state = () => {
         feriasGeral: [
             {
                 id: 1,
-                id_funcionario: 2,
+                id_funcionario: 1,
                 dataInicio: '2024-10-03',
                 dataFim: '2024-10-20',
                 isAprovada: false,
                 isAtendida: false
-            },
+            }
+        ],
+        funcionariosRequisicoesPendentes: [
             {
                 id: 2,
-                id_funcionario: 2,
-                dataInicio: '2024-09-15',
-                dataFim: '2024-09-30',
-                isAprovada: false
+                email: "lindsay.ferguson@reqres.in",
+                first_name: "Lindsay",
+                last_name: "Ferguson",
+                avatar: "https://reqres.in/img/faces/8-image.jpg",
             },
             {
-                id: 3,
-                id_funcionario: 2,
-                dataInicio: '2024-11-01',
-                dataFim: '2024-11-15',
-                isAprovada: false,
-                isAtendida: false
+                id: 1,
+                email: "michael.lawson@reqres.in",
+                first_name: "Michael",
+                last_name: "Lawson",
+                avatar: "https://reqres.in/img/faces/7-image.jpg",
             }
-        ]
+        ],
+        funcionariosRequisicoesAtendidas: []
     }
 }
 

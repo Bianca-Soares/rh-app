@@ -2,11 +2,11 @@
   <nav class="nav">
     <ul>
       <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/favoritos">Favoritos</router-link></li>
+      <li><router-link to="/favoritos">Atendidas</router-link></li>
     </ul>
     <div class="favorito">
       <img src="@/assets/star-svgrepo.svg" alt="favoritos" />
-      <span v-if="true">{{ totalFavoritos }}</span>
+      <span >{{ totalPendentes }}</span>
     </div>
   </nav>
 </template>
@@ -14,15 +14,15 @@
 <script>
 
 import { computed } from "vue"
-import { useStore } from "@/stores/pessoa"
+import { useFuncionarioStore } from "@/stores/funcionario"
 
 export default {
   setup() {
-    const usuario = useStore()
-    const totalFavoritos = computed(() => usuario.totalFavoritos)
+    const funcionario = useFuncionarioStore()
+    const totalPendentes = computed(() => funcionario.totalPendentes)
 
     return {
-      totalFavoritos
+      totalPendentes
     }
   }
 }

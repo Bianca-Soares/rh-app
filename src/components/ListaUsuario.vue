@@ -1,8 +1,8 @@
 <template>
-  <h1>Lista de usuários</h1>
+  <h1>Requisições Pendentes</h1>
   <div>
     <div class="lista">
-      <div v-for="item in listaPessoas" :key="item.id">
+      <div v-for="item in requisicoesPendentes" :key="item.id">
         <Usuario
           @selecionado="adicionarFavorito($event)"
           @removeSelecionado="removerFavorito($event)"
@@ -16,6 +16,7 @@
 <script>
 import Usuario from "@/components/Usuario.vue"
 import { useStore } from "@/stores/pessoa"
+import { useFuncionarioStore } from "@/stores/funcionario"
 import { computed } from "vue"
 
 export default {
@@ -24,10 +25,11 @@ export default {
   },
   setup() {
     const usuario = useStore()
-    const listaPessoas = computed(() => usuario.$state.listaPessoas)
+    const funcionario = useFuncionarioStore()
+    const requisicoesPendentes = computed(() => funcionario.$state.funcionariosRequisicoesPendentes)
 
     return {
-      listaPessoas,
+      requisicoesPendentes,
       isFavorito: usuario.isFavorito,
       adicionarFavorito: usuario.adicionarUsuario,
       removerFavorito: usuario.removerUsuario
