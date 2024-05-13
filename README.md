@@ -1,5 +1,5 @@
-# Aplicação de RH (rh-app)
-# Esta é uma aplicação de Recursos Humanos (RH) para gerenciar os processos relacionados a funcionários e suas atividades do setor de recursos humanos.
+## Aplicação de RH (rh-app)
+## Esta é uma aplicação de Recursos Humanos (RH) para gerenciar os processos relacionados a funcionários e suas atividades do setor de recursos humanos.
 
 
 ## Project setup vue 3
