@@ -49,8 +49,8 @@
                         <h5 class="modal-title">Confirmar</h5>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" @click="editMode = false">Fechar</button>
-                        <button type="button" class="btn btn-primary bg-color-cyan"
+                        <button v-if="!item.isAtendida" type="button" class="btn btn-secondary" @click="editMode = false">Fechar</button>
+                        <button v-if="!item.isAtendida" type="button" class="btn btn-primary bg-color-cyan"
                             @click="aprovarFerias(idSelecionado, isAprovada), editMode = false">Salvar mudança</button>
                     </div>
                 </div>

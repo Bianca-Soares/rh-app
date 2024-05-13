@@ -29,9 +29,9 @@
                 <input type="checkbox" class="form-check-input" id="isAprovada" v-model="item.isAprovada" disabled>
                 <label class="form-check-label" for="isAprovada">Aprovado</label>
               </div>
-              <button class="btn btn-primary bg-color-cyan float-end mx-4"
+              <button v-if="!item.isAtendida" class="btn btn-primary bg-color-cyan float-end mx-4"
                 @click="editMode = true, isAprovada = false, idSelecionado = item.id">Reprovar</button>
-              <button class="btn btn-primary bg-color-cyan float-end"
+              <button v-if="!item.isAtendida" class="btn btn-primary bg-color-cyan float-end"
                 @click="editMode = true, isAprovada = true, idSelecionado = item.id">Aprovar</button>
             </div>
           </div>
@@ -42,7 +42,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Confirmar</h5>
+            <h5 class="modal-title">Confirmação</h5>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" @click="editMode = false">Fechar</button>
